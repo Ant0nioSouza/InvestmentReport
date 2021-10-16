@@ -30,9 +30,9 @@ public class CsvUtils {
         rows = new ArrayList<String[]>();
         try {
             while ((line = reader.readLine()) != null) {
-                row = line.split(";");
+                row = line.split(";"); // Differentiates columns by account of ;
                 for (int i = 0; i < row.length; i++) {
-                    if ((i + 1) % 4 == 0) {
+                    if ((i + 1) % 4 == 0) { // if it's at the end of the line.
                         rows.add(row);
                     }
                 }
