@@ -23,8 +23,14 @@ public class CsvUtils {
 
     public String[] readCSV() throws IOException {
         try {
+            System.out.println("---");
             while ((line = reader.readLine()) != null) {
-                row = line.split(",");
+                row = line.split(";");
+                for (int i = 0; i < row.length; i++) {
+                    if ((i + 1) % 5 == 0) {
+                        // row[i] is one row of the csv.
+                    }
+                }
             }
             return row;
         } catch (Exception e) {
