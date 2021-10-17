@@ -23,8 +23,6 @@ public class FinancialUtils {
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         JSONObject quoteJSON = new JSONObject(response.body());
-        System.out.println(URL + "function=" + QUOTE_FUNCTION + "&symbol=" + quote.getSymbol() + SAB + "&apikey=" + "DT4G6I3HCT0NYWC6");
-        System.out.println(response.body());
         String price = quoteJSON.getJSONObject("Global Quote").getString("05. price");
 
         return Float.parseFloat(price);
